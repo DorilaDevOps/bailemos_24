@@ -72,21 +72,16 @@ vercel --prod
 
 ---
 
-## ⚠️ Paso obligatorio después de publicar
+## ✅ Metadatos para compartir (Open Graph)
 
-En `index.html` hay **7 apariciones** de un dominio de ejemplo que hay que reemplazar por la URL real donde quede publicado el sitio:
+El sitio ya tiene las etiquetas `og:*` configuradas con la URL real **`https://bailemos24.netlify.app/`** (las 7 apariciones de `https://tu-dominio.com/` ya fueron reemplazadas):
 
-```
-https://tu-dominio.com/
-```
-
-Buscar y reemplazar ese texto por tu URL final (por ejemplo `https://nostalgia-24.netlify.app/`, o `https://doriladevops.github.io/bailemos_24/` si usás GitHub Pages) en:
 - `<link rel="canonical" ...>`
 - Todas las etiquetas `og:url` / `og:image` / `og:image:secure_url`
 - `twitter:image`
 - El bloque `application/ld+json` al final del `<head>` (aparece 2 veces: `image` y `url`)
 
-**Esto es indispensable** para que la vista previa de WhatsApp funcione: WhatsApp necesita poder acceder a esa URL pública para leer las etiquetas `og:*` y descargar `og-image.png` — no lee nada de un archivo local ni de `localhost`.
+Si algún día el sitio cambia de dominio, buscá y reemplazá `https://bailemos24.netlify.app/` por la nueva URL en esas mismas 7 apariciones. **Esto es indispensable** para que la vista previa de WhatsApp funcione: WhatsApp necesita poder acceder a esa URL pública para leer las etiquetas `og:*` y descargar `og-image.png` — no lee nada de un archivo local ni de `localhost`.
 
 Después de publicar, podés verificar cómo se ve la tarjeta de WhatsApp con:
 - [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/) (WhatsApp usa el mismo motor de Open Graph)
@@ -122,7 +117,7 @@ Todo el texto editable está en `index.html`, buscá estas secciones:
 
 ## ✅ Checklist antes de mandar el link
 
-- [ ] Reemplazar `https://tu-dominio.com/` por la URL real (7 apariciones)
+- [x] Reemplazar `https://tu-dominio.com/` por la URL real (7 apariciones) — hecho: `https://bailemos24.netlify.app/`
 - [ ] Probar el link en el propio WhatsApp (mandártelo a vos mismo) y confirmar que se ve la imagen de vista previa
 - [ ] Probar en un celular real que el audio arranca al tocar
 - [ ] Confirmar que el número de WhatsApp del RSVP es el correcto
