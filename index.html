@@ -300,6 +300,7 @@
     display:flex; align-items:center; justify-content:center;
   }
   .reel{
+    display:block;
     width:62%; aspect-ratio:1; border-radius:50%;
     background:
       radial-gradient(circle, var(--reel-center) 0 15%, transparent 16%),
@@ -352,11 +353,10 @@
   .detail-row .txt .v{
     font-family:'Space Grotesk', sans-serif;
     font-size: var(--fs-label-value);
-    color: var(--cream);
+    color: var(--acid);
     font-weight:600; line-height:1.35;
-    word-break: break-word;	
-	color: var(--acid);
-	letter-spacing: .04rem;
+    word-break: break-word;
+    letter-spacing: .04rem;
   }
   .detail-row a.v{
     text-decoration:none;
@@ -487,9 +487,9 @@
     <span class="screw tc"></span>
 
     <div class="window">
-      <div class="reel-hole"><div class="reel"></div></div>
+      <span class="reel-hole"><span class="reel"></span></span>
       <span class="tape-line"></span>
-      <div class="reel-hole"><div class="reel"></div></div>
+      <span class="reel-hole"><span class="reel"></span></span>
     </div>
 
     <div class="label">
@@ -517,7 +517,7 @@
         <span class="icon">💬</span>
         <div class="txt">
           <span class="k">RSVP</span>
-          <a class="v" href="https://wa.me/59894872605?text=Agregame%20al%20grupo%20de%20whats%20app" target="_blank" rel="noopener">
+          <a class="v" href="https://wa.me/59899272117?text=Agregame%20al%20grupo%20de%20whats%20app" target="_blank" rel="noopener">
             Confirmar por WhatsApp <span class="arrow">↗</span>
           </a>
         </div>
@@ -643,12 +643,14 @@
 
   function pad(n){ return String(n).padStart(2, '0'); }
 
+  let countdownTimer = null;
+
   function updateCountdown(){
     const diff = PARTY_DATE.getTime() - Date.now();
     if (diff <= 0){
       countdownLabel.textContent = '¡Es hoy! Nos vemos a las 21:00 hs 🎉';
       countdownGrid.style.display = 'none';
-      clearInterval(countdownTimer);
+      if (countdownTimer) clearInterval(countdownTimer);
       return;
     }
     const totalSeconds = Math.floor(diff / 1000);
@@ -663,7 +665,7 @@
   }
 
   updateCountdown();
-  const countdownTimer = setInterval(updateCountdown, 1000);
+  countdownTimer = setInterval(updateCountdown, 1000);
 </script>
 
 </body>
