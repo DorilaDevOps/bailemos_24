@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Cassette amarillo - Fiesta Nostalgia">
+  <defs>
+    <radialGradient id="glowPink" cx="15%" cy="8%" r="65%">
+      <stop offset="0%" stop-color="#eb48e8" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#eb48e8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowGreen" cx="92%" cy="10%" r="60%">
+      <stop offset="0%" stop-color="#3aff16" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#3aff16" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowLime" cx="50%" cy="102%" r="65%">
+      <stop offset="0%" stop-color="#c8e658" stop-opacity="0.62"/>
+      <stop offset="100%" stop-color="#c8e658" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="halo" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffd700" stop-opacity="0.42"/>
+      <stop offset="100%" stop-color="#ffd700" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="cassetteGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffe14d"/>
+      <stop offset="55%" stop-color="#ffd700"/>
+      <stop offset="100%" stop-color="#e0b300"/>
+    </linearGradient>
+    <pattern id="dots" width="3" height="3" patternUnits="userSpaceOnUse">
+      <circle cx="1.5" cy="1.5" r="0.5" fill="#ffffff" opacity="0.045"/>
+    </pattern>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="20" stdDeviation="26" flood-color="#000000" flood-opacity="0.55"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="#1a1530"/>
+  <rect width="1200" height="630" fill="url(#glowPink)"/>
+  <rect width="1200" height="630" fill="url(#glowGreen)"/>
+  <rect width="1200" height="630" fill="url(#glowLime)"/>
+  <rect width="1200" height="630" fill="url(#dots)"/>
+
+  <circle cx="600" cy="300" r="340" fill="url(#halo)"/>
+
+  <g transform="translate(290.4, 18.3) scale(12.9)">
+    <g filter="url(#shadow)">
+      <rect x="0" y="9" width="48" height="27" rx="3" fill="url(#cassetteGrad)" stroke="#c99700" stroke-width="0.35"/>
+      <path d="M11.517,37l2.143-5h20.682l2.143,5z" fill="url(#cassetteGrad)" stroke="#c99700" stroke-width="0.35"/>
+    </g>
+    <rect x="16" y="21" width="16" height="6" rx="1.6" fill="#0a0818"/>
+    <circle cx="11.25" cy="22" r="2" fill="#b8860b"/>
+    <circle cx="11.25" cy="22" r="1" fill="#0a0818"/>
+    <circle cx="36.75" cy="22" r="2" fill="#b8860b"/>
+    <circle cx="36.75" cy="22" r="1" fill="#0a0818"/>
+    <rect x="17.4" y="23.85" width="13.2" height="0.3" fill="#5a3d00" opacity="0.75"/>
+    <circle cx="5" cy="13" r="0.8" fill="#b8860b"/>
+    <circle cx="45" cy="13" r="0.8" fill="#b8860b"/>
+    <circle cx="5" cy="35" r="0.8" fill="#b8860b"/>
+    <circle cx="45" cy="35" r="0.8" fill="#b8860b"/>
+    <rect x="16" y="33" width="2" height="2" fill="#b8860b"/>
+    <rect x="33" y="33" width="2" height="2" fill="#b8860b"/>
+  </g>
+</svg>
