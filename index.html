@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#07060d">
+<meta name="color-scheme" content="dark">
+
+<title>Nostalgia — Fiesta de Baile Retro | 24 de agosto, Montevideo</title>
+<meta name="description" content="Fiesta de baile retro NOSTALGIA. Lunes 24 de agosto desde las 21:00 hs en Coraceros 3690, Capurro, Montevideo. Confirmá tu asistencia por WhatsApp.">
+<meta name="robots" content="index, follow">
+<meta name="format-detection" content="telephone=no">
+<link rel="canonical" href="https://tu-dominio.com/">
+
+<!-- ===== Open Graph (WhatsApp, Facebook, Telegram, etc.) ===== -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Nostalgia — Fiesta de Baile Retro">
+<meta property="og:title" content="Nostalgia — Fiesta de Baile Retro 🎶">
+<meta property="og:description" content="Lunes 24 de agosto, 21:00 hs. Coraceros 3690, Capurro, Montevideo. Vení a bailar como antes.">
+<meta property="og:url" content="https://tu-dominio.com/">
+<meta property="og:image" content="https://tu-dominio.com/og-image.png">
+<meta property="og:image:secure_url" content="https://tu-dominio.com/og-image.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Invitación Nostalgia — Fiesta de baile retro, 24 de agosto">
+<meta property="og:locale" content="es_UY">
+
+<!-- ===== Twitter / X card (fallback, no molesta a WhatsApp) ===== -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Nostalgia — Fiesta de Baile Retro 🎶">
+<meta name="twitter:description" content="Lunes 24 de agosto, 21:00 hs. Coraceros 3690, Capurro, Montevideo.">
+<meta name="twitter:image" content="https://tu-dominio.com/og-image.png">
+
+<!-- ===== Favicons ===== -->
+<link rel="icon" href="cassete.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="favicon-16.png" sizes="16x16" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="mask-icon" href="cassete.svg" color="#8b41d1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Nostalgia">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+<!-- ===== Datos estructurados (SEO: rich results de evento) ===== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SocialEvent",
+  "name": "Nostalgia — Fiesta de Baile Retro",
+  "description": "Fiesta de baile retro. Vení a bailar como antes.",
+  "startDate": "2026-08-24T21:00:00-03:00",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "location": {
+    "@type": "Place",
+    "name": "Capurro, Montevideo",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Coraceros 3690",
+      "addressLocality": "Montevideo",
+      "addressRegion": "Montevideo",
+      "addressCountry": "UY"
+    }
+  },
+  "image": ["https://tu-dominio.com/og-image.png"],
+  "url": "https://tu-dominio.com/"
+}
+</script>
+
+<style>
+  :root{
+    /* ---------- colores base ---------- */
+    --bg: #07060d;
+    --shell-dark: #100d20;
+    --shell-mid: #1a1530;
+    --shell-deepest: #08061a;
+    --pink: #ff2ea6;
+    --cyan: #16f2ff;
+    --purple: #b26bff;
+    --acid: #d6ff3c;
+    --cream: #f7f2ea;
+
+    /* componentes rgb (para usar con rgba(var(--x-rgb), alpha)) */
+    --pink-rgb: 255,46,166;
+    --cyan-rgb: 22,242,255;
+    --purple-rgb: 178,107,255;
+    --acid-rgb: 214,255,60;
+    --cream-rgb: 247,242,234;
+    --black-rgb: 0,0,0;
+    --white-rgb: 255,255,255;
+
+    /* tonos específicos de las piezas del cassette */
+    --window-bg: #030209;
+    --reel-hole-a: #2c2b58;
+    --reel-hole-b: #020108;
+    --reel-center: #6a4fc9;
+    --screw-a: #4a4780;
+    --screw-b: #050414;
+    --label-a: #1b1733;
+    --label-b: #100c22;
+    --label-c: #0a0818;
+    --hexhole-a: #3a3670;
+    --hexhole-b: #040310;
+    --slit-a: #040310;
+    --slit-b: #1c1840;
+
+    /* ---------- tamaños de fuente (clamp, en em) ---------- */
+    --fs-kicker: clamp(0.6875em, 2.6vw, 0.75em);
+    --fs-title: clamp(2em, 12vw, 3.625em);
+    --fs-subtitle: clamp(0.875em, 3vw, 0.9375em);
+    --fs-icon: clamp(0.875em, 4vw, 1.0625em);
+    --fs-label-key: clamp(0.5625em, 2.6vw, 0.65625em);
+    --fs-label-value: clamp(0.84375em, 4vw, 1em);
+    --fs-hint: clamp(0.6875em, 3vw, 0.75em);
+    --fs-countdown-num: clamp(1.1em, 5vw, 1.5em);
+    --fs-countdown-label: clamp(0.5em, 2vw, 0.6em);
+    --fs-countdown-sep: clamp(1em, 4vw, 1.3em);
+
+    --safe-top: env(safe-area-inset-top, 0px);
+    --safe-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; -webkit-tap-highlight-color: transparent; }
+  html,body{ min-height:100%; }
+
+  body{
+    min-height:100dvh;
+    background: radial-gradient(circle at 15% 8%, rgb(235 72 232 / 51%), 
+		transparent 45%), 
+		radial-gradient(circle at 90% 12%, rgb(58 255 22 / 54%), 
+		transparent 40%), 
+		radial-gradient(circle at 50% 100%, 
+		rgb(200 230 88 / 67%), 
+		transparent 50%), 
+		var(--shell-mid);
+    font-family:'Space Grotesk', sans-serif;
+    color: var(--cream);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    padding: calc(16px + var(--safe-top)) 14px calc(20px + var(--safe-bottom));
+    overflow-x:hidden;
+    gap: clamp(10px, 2.6dvh, 18px);
+  }
+
+  .glow-noise{
+    position:fixed; inset:0;
+    background-image: radial-gradient(rgba(var(--white-rgb),0.035) 1px, transparent 1px);
+    background-size: 3px 3px;
+    pointer-events:none; opacity:.5; z-index:0;
+  }
+
+  .sr-only{
+    position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+    overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
+  }
+
+  main{
+    width:100%; max-width: 480px;
+    display:flex; flex-direction:column; align-items:center;
+    z-index:1;
+    gap: clamp(6px, 1.8dvh, 14px);
+    cursor: pointer;
+  }
+
+  /* ================= headline ================= */
+  .kicker{
+    font-family:'JetBrains Mono', monospace;
+    font-size: var(--fs-kicker);
+    letter-spacing:4px; text-transform:uppercase;
+    color: var(--cyan);
+    text-shadow: 0 0 10px rgba(var(--cyan-rgb),0.8);
+    opacity:0; animation: fade-up .6s ease forwards .1s;
+  }
+  h1.title{
+    font-family:'Fredoka', sans-serif; font-weight:700;
+    font-size: var(--fs-title);
+    line-height:0.9; letter-spacing:1px; text-align:center;
+    color: var(--cream);
+    text-shadow:
+      0 0 6px rgba(var(--pink-rgb),0.9),
+      0 0 20px rgba(var(--pink-rgb),0.6),
+      0 0 46px rgba(var(--cyan-rgb),0.35);
+    opacity:0; animation: fade-up .6s ease forwards .22s;
+  }
+  .subtitle{
+    font-family:'Fredoka', sans-serif; font-weight:600;
+    font-size: var(--fs-subtitle);
+    letter-spacing:3px; text-transform:uppercase;
+    color: var(--acid);
+    text-shadow: 0 0 12px rgba(var(--acid-rgb),0.55);
+    text-align:center;
+    opacity:0; animation: fade-up .6s ease forwards .34s;
+  }
+
+  @keyframes fade-up{
+    from{ opacity:0; transform: translateY(14px); }
+    to{ opacity:1; transform: translateY(0); }
+  }
+
+  /* ================= contador regresivo (estilo contador de cinta) ================= */
+  .countdown{
+    display:flex; 
+	flex-direction:column; 
+    gap:6px;
+    cursor:auto;
+	border-radius: 2rem;
+    box-shadow: inset 0 0 0 1px rgba(var(--white-rgb),0.06), inset 0 4px 14px rgba(var(--black-rgb),0.5);
+    opacity:0; 
+	animation: fade-up .6s ease forwards .4s;
+  }
+  .countdown-label{
+    font-family:'JetBrains Mono', monospace;
+    font-size: var(--fs-label-key);
+    letter-spacing:2px; text-transform:uppercase;
+    color: rgba(var(--cream-rgb), 0.55);;
+    text-shadow: 0 0 10px rgba(var(--acid-rgb),0.4);
+    text-align:center;
+  }
+  .countdown-grid{
+    display:flex; align-items:flex-start; justify-content:center;
+    gap:4px;
+    border-radius:10px;
+    padding: 10px clamp(10px,3vw,16px);
+  }
+  .c-unit{ display:flex; flex-direction:column; align-items:center; min-width: 2.6em; }
+  .c-num{
+    font-family:'JetBrains Mono', monospace; font-weight:600;
+    font-size: var(--fs-countdown-num);
+    color: var(--cream);
+    text-shadow: 0 0 10px rgba(var(--cyan-rgb),0.5);
+    line-height:1;
+    font-variant-numeric: tabular-nums;
+  }
+  .c-label{
+    font-family:'JetBrains Mono', monospace;
+    font-size: var(--fs-countdown-label);
+    letter-spacing:1px; text-transform:uppercase;
+    color: rgba(var(--cream-rgb),0.55);
+    margin-top:3px;
+  }
+  .c-sep{
+    font-family:'JetBrains Mono', monospace;
+    font-size: var(--fs-countdown-sep);
+    color: var(--cyan);
+    opacity:.5;
+    padding-top: 1px;
+  }
+
+  /* ================= cassette shell (forma real, horizontal) ================= */
+  .cassette{
+    position:relative;
+    width: min(94vw, 460px);
+    background: linear-gradient(155deg, var(--shell-mid) 0%, var(--shell-dark) 55%, var(--shell-deepest) 100%);
+    border-radius: 22px;
+    clip-path: polygon(
+      5% 0%, 95% 0%, 100% 3.5%, 100% 96.5%, 95% 100%,
+      5% 100%, 0% 96.5%, 0% 3.5%
+    );
+    box-shadow:
+      0 0 0 1px rgba(var(--white-rgb),0.07),
+      0 24px 50px rgba(var(--black-rgb),0.55),
+      0 0 60px rgba(var(--pink-rgb),0.18),
+      0 0 100px rgba(var(--cyan-rgb),0.08);
+    display:flex; flex-direction:column;
+    padding: clamp(14px,4vw,20px) clamp(14px,4.2vw,20px) clamp(16px,4.5vw,22px);
+    opacity:0; animation: fade-up .7s ease forwards .46s;
+    transition: transform .15s ease;
+  }
+  main:active .cassette{ transform: scale(0.985); }
+
+  .screw{ position:absolute; width:9px; height:9px; border-radius:50%;
+    background: radial-gradient(circle at 35% 30%, var(--screw-a), var(--screw-b) 70%);
+    box-shadow: 0 0 0 1px rgba(var(--white-rgb),0.09); }
+  .screw.tl{ top:13px; left:14px; } .screw.tr{ top:13px; right:14px; }
+  .screw.bl{ bottom:13px; left:14px; } .screw.br{ bottom:13px; right:14px; }
+  .screw.tc{ top:9px; left:50%; transform:translateX(-50%); }
+
+  .window{
+    position:relative;
+    width:100%;
+    aspect-ratio: 3.6 / 1;
+    background: var(--window-bg);
+    border-radius: 10px;
+    display:flex; align-items:center; justify-content:space-between;
+    padding: 0 6%;
+    box-shadow: inset 0 0 0 1px rgba(var(--white-rgb),0.05), inset 0 4px 14px rgba(var(--black-rgb),0.6);
+  }
+  .reel-hole{
+    position:relative; width: 26%; aspect-ratio:1; border-radius:50%;
+    background: radial-gradient(circle at 40% 35%, var(--reel-hole-a), var(--reel-hole-b) 75%);
+    box-shadow: inset 0 0 0 2px rgba(var(--white-rgb),0.07), 0 0 14px rgba(var(--cyan-rgb),0.18);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .reel{
+    width:62%; aspect-ratio:1; border-radius:50%;
+    background:
+      radial-gradient(circle, var(--reel-center) 0 15%, transparent 16%),
+      repeating-conic-gradient(var(--cream) 0deg 7deg, transparent 7deg 45deg);
+    animation: reel-spin 4.2s linear infinite;
+    animation-play-state: paused;
+    transition: animation-duration .4s ease;
+  }
+  .cassette.playing .reel{ animation-play-state: running; animation-duration: 0.55s; }
+  @keyframes reel-spin{ to{ transform:rotate(360deg);} }
+  .tape-line{
+    position:absolute; top:50%; left:30%; right:30%; height:2px;
+    background: rgba(var(--white-rgb),0.18); transform:translateY(-50%);
+  }
+
+  /* ================= label ================= */
+  .label{
+    margin-top: clamp(10px,3vw,16px);
+    background: linear-gradient(165deg, var(--label-a) 0%, var(--label-b) 60%, var(--label-c) 100%);
+    border-radius: 12px;
+    padding: clamp(14px,4vw,20px) clamp(14px,4.5vw,20px);
+    box-shadow:
+      0 8px 20px rgba(var(--black-rgb),0.45),
+      inset 0 0 0 1px rgba(var(--white-rgb),0.06),
+      inset 0 0 24px rgba(var(--purple-rgb),0.06);
+    display:flex; flex-direction:column;
+    gap: clamp(10px, 2.4vw, 14px);
+    position:relative;
+    cursor:auto;
+  }
+  .label::before{
+    content:"";
+    position:absolute; left:0; right:0; top:0; bottom:0;
+    border-radius:12px;
+    background-image: radial-gradient(circle at 85% 0%, rgba(var(--cyan-rgb),0.06), transparent 55%);
+    pointer-events:none;
+  }
+
+  .detail-row{ position:relative; display:flex; align-items:flex-start; gap:10px; }
+  .detail-row .icon{ width:20px; text-align:center; font-size: var(--fs-icon); flex-shrink:0; margin-top:1px; }
+  .detail-row .txt{ min-width:0; flex:1; }
+  .detail-row .txt .k{
+    font-family:'JetBrains Mono', monospace;
+    font-size: var(--fs-label-key);
+    letter-spacing:1.8px; text-transform:uppercase;
+    color: var(--cyan);
+    opacity:.85;
+    display:block; margin-bottom:2px;
+  }
+  .detail-row .txt .v{
+    font-family:'Space Grotesk', sans-serif;
+    font-size: var(--fs-label-value);
+    color: var(--cream);
+    font-weight:600; line-height:1.35;
+    word-break: break-word;	
+	color: var(--acid);
+	letter-spacing: .04rem;
+  }
+  .detail-row a.v{
+    text-decoration:none;
+    color: var(--cream);
+    display:inline-flex; align-items:center; flex-wrap:wrap; gap:5px;
+    border-bottom: 1.5px dashed rgba(var(--cream-rgb),0.35);
+    min-height:24px;
+  }
+  .detail-row a.v:active{ opacity:.6; }
+  .detail-row.rsvp .txt .k{ color: var(--pink); }
+  .detail-row.rsvp a.v{
+    color: var(--acid);
+    border-bottom-color: rgba(var(--acid-rgb),0.45);
+    text-shadow: 0 0 10px rgba(var(--acid-rgb),0.25);
+  }
+  .detail-row .arrow{ font-size:0.85em; opacity:.7; }
+
+  .divider{
+    height:1px;
+    background: repeating-linear-gradient(to right, rgba(var(--cream-rgb),0.14) 0 6px, transparent 6px 11px);
+  }
+
+  .side-tag{
+    margin-top:2px;
+    text-align:right;
+    font-family:'JetBrains Mono', monospace;
+    font-size: 0.59375em; letter-spacing:2px; color: rgba(var(--cream-rgb),0.4);
+  }
+
+  .base{
+    display:flex; align-items:center; justify-content:center;
+    gap: clamp(18px,6vw,28px);
+    margin-top: clamp(12px,3.5vw,16px);
+  }
+  .hex-hole{
+    width: 15px; height:15px;
+    background: radial-gradient(circle at 35% 30%, var(--hexhole-a), var(--hexhole-b) 70%);
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    flex-shrink:0;
+  }
+  .slit{
+    width: clamp(46px,14vw,64px); height:7px;
+    border-radius:4px;
+    background: linear-gradient(180deg, var(--slit-a), var(--slit-b));
+    box-shadow: inset 0 0 4px rgba(var(--black-rgb),0.6);
+    flex-shrink:0;
+  }
+
+  /* ================= controles (play hint + mute) ================= */
+  .controls{
+    display:flex; align-items:center; justify-content:center;
+    gap:10px;
+    cursor:auto;
+  }
+  .hint{
+    appearance:none; -webkit-appearance:none;
+    background:none; border:none;
+    display:inline-flex; align-items:center; gap:8px;
+    min-height:44px; padding: 6px 14px;
+    font-family:'JetBrains Mono', monospace;
+    font-size: var(--fs-hint);
+    letter-spacing:1.5px;
+    color: var(--cyan);
+    text-decoration:none;
+    text-shadow: 0 0 10px rgba(var(--cyan-rgb),0.5);
+    border-bottom: 1.5px dashed rgba(var(--cyan-rgb),0.4);
+    opacity:0; animation: fade-up .6s ease forwards .6s;
+    transition: transform .15s ease, opacity .15s ease;
+    cursor:pointer;
+  }
+  .hint:active{ transform: scale(0.96); opacity:.7; }
+  .hint:focus-visible, a.v:focus-visible, main:focus-visible, .mute-btn:focus-visible{
+    outline: 2px solid var(--acid); outline-offset: 3px; border-radius: 4px;
+  }
+  .hint .eq{ display:inline-flex; align-items:flex-end; gap:2px; height:12px; }
+  .hint .eq span{
+    width:2.5px; background: var(--cyan); border-radius:1px;
+    height:4px; animation: eq-bounce 0.9s ease-in-out infinite;
+    animation-play-state: paused;
+  }
+  .hint .eq span:nth-child(2){ animation-delay: .15s; }
+  .hint .eq span:nth-child(3){ animation-delay: .3s; }
+  main.playing .hint .eq span{ animation-play-state: running; }
+  @keyframes eq-bounce{
+    0%,100%{ height:3px; } 50%{ height:12px; }
+  }
+
+  .mute-btn{
+    appearance:none; -webkit-appearance:none;
+    background: rgba(var(--white-rgb),0.06);
+    border: 1px solid rgba(var(--white-rgb),0.14);
+    border-radius: 50%;
+    width:40px; height:40px; flex-shrink:0;
+    display:inline-flex; align-items:center; justify-content:center;
+    font-size: 1.05em;
+    line-height:1;
+    cursor:pointer;
+    opacity:0; animation: fade-up .6s ease forwards .68s;
+    transition: transform .15s ease, opacity .15s ease, background .15s ease, border-color .15s ease;
+  }
+  .mute-btn:hover{ background: rgba(var(--white-rgb),0.1); }
+  .mute-btn:active{ transform: scale(0.88); }
+  .mute-btn[aria-pressed="true"]{
+    border-color: rgba(var(--pink-rgb),0.5);
+    box-shadow: 0 0 10px rgba(var(--pink-rgb),0.25);
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="glow-noise"></div>
+
+<main id="V" tabindex="0" role="button" aria-pressed="false" aria-label="Tocar para reproducir el himno de la fiesta">
+  <div class="kicker">Vení a bailar como antes</div>
+  <h1 class="title">NOSTALGIA</h1>
+  <div class="subtitle">Fiesta de baile retro</div>
+
+
+  <div class="cassette" id="cassette">
+    <span class="screw tl"></span>
+    <span class="screw tr"></span>
+    <span class="screw bl"></span>
+    <span class="screw br"></span>
+    <span class="screw tc"></span>
+
+    <div class="window">
+      <div class="reel-hole"><div class="reel"></div></div>
+      <span class="tape-line"></span>
+      <div class="reel-hole"><div class="reel"></div></div>
+    </div>
+
+    <div class="label">
+      <div class="detail-row">
+        <span class="icon">🗓️</span>
+        <div class="txt"><span class="k">Fecha</span><span class="v">Lunes 24 de agosto</span></div>
+      </div>
+      <div class="divider"></div>
+      <div class="detail-row">
+        <span class="icon">⏰</span>
+        <div class="txt"><span class="k">Hora</span><span class="v">Desde las 21:00 hs</span></div>
+      </div>
+      <div class="divider"></div>
+      <div class="detail-row">
+        <span class="icon">📍</span>
+        <div class="txt">
+          <span class="k">Lugar</span>
+          <a class="v" href="https://www.google.com/maps/search/?api=1&query=Coraceros+3690%2C+Capurro%2C+Montevideo%2C+Uruguay" target="_blank" rel="noopener">
+            Coraceros 3690, Capurro <span class="arrow">↗</span>
+          </a>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="detail-row rsvp">
+        <span class="icon">💬</span>
+        <div class="txt">
+          <span class="k">RSVP</span>
+          <a class="v" href="https://wa.me/59894872605?text=Agregame%20al%20grupo%20de%20whats%20app" target="_blank" rel="noopener">
+            Confirmar por WhatsApp <span class="arrow">↗</span>
+          </a>
+        </div>
+      </div>
+	  
+	  
+  <div class="countdown" id="countdown">
+    <div class="countdown-label" id="countdownLabel">Faltan</div>
+    <div class="countdown-grid" id="countdownGrid">
+      <div class="c-unit"><span class="c-num" id="cd-days">00</span><span class="c-label">días</span></div>
+      <span class="c-sep" aria-hidden="true">:</span>
+      <div class="c-unit"><span class="c-num" id="cd-hours">00</span><span class="c-label">hs</span></div>
+      <span class="c-sep" aria-hidden="true">:</span>
+      <div class="c-unit"><span class="c-num" id="cd-min">00</span><span class="c-label">min</span></div>
+      <span class="c-sep" aria-hidden="true">:</span>
+      <div class="c-unit"><span class="c-num" id="cd-sec">00</span><span class="c-label">seg</span></div>
+    </div>
+    <p class="sr-only">La fiesta Nostalgia es el lunes 24 de agosto de 2026 a las 21:00 hs.</p>
+  </div>
+
+      <div class="side-tag">SIDE A</div>
+    </div>
+
+    <div class="base">
+      <div class="hex-hole"></div>
+      <div class="slit"></div>
+      <div class="slit"></div>
+      <div class="hex-hole"></div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <button type="button" class="hint" id="playHint" aria-pressed="false">
+      <span class="eq" aria-hidden="true"><span></span><span></span><span></span></span>
+      <span id="playHintLabel">Tocá para escuchar el himno de la fiesta ▸</span>
+    </button>
+    <button type="button" class="mute-btn" id="muteBtn" aria-pressed="false" aria-label="Silenciar audio">
+      <span id="muteIcon" aria-hidden="true">🔊</span>
+    </button>
+  </div>
+
+  <audio id="himno" src="devo.mp3" preload="none" loop playsinline></audio>
+</main>
+
+<script>
+  const main = document.getElementById('V');
+  const cassette = document.getElementById('cassette');
+  const playHint = document.getElementById('playHint');
+  const playHintLabel = document.getElementById('playHintLabel');
+  const muteBtn = document.getElementById('muteBtn');
+  const muteIcon = document.getElementById('muteIcon');
+  const audio = document.getElementById('himno');
+
+  const LABEL_PLAY = 'Tocá para escuchar el himno de la fiesta ▸';
+  const LABEL_PAUSE = 'Sonando ahora — tocá para pausar ⏸';
+
+  function setPlayingUI(isPlaying){
+    cassette.classList.toggle('playing', isPlaying);
+    main.classList.toggle('playing', isPlaying);
+    playHint.setAttribute('aria-pressed', String(isPlaying));
+    main.setAttribute('aria-pressed', String(isPlaying));
+    playHintLabel.textContent = isPlaying ? LABEL_PAUSE : LABEL_PLAY;
+  }
+
+  async function toggleAudio(){
+    try{
+      if (audio.paused){
+        await audio.play();
+      } else {
+        audio.pause();
+      }
+    }catch(err){
+      // Reproducción bloqueada por el navegador hasta un gesto directo del usuario; se ignora.
+    }
+    if (navigator.vibrate) navigator.vibrate(12);
+  }
+
+  audio.addEventListener('play', () => setPlayingUI(true));
+  audio.addEventListener('pause', () => setPlayingUI(false));
+  audio.addEventListener('ended', () => setPlayingUI(false));
+
+  // Tocar el botón "playHint"
+  playHint.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleAudio();
+  });
+
+  // Botón de silenciar / activar audio (no afecta play/pause)
+  muteBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    audio.muted = !audio.muted;
+    muteBtn.setAttribute('aria-pressed', String(audio.muted));
+    muteBtn.setAttribute('aria-label', audio.muted ? 'Activar audio' : 'Silenciar audio');
+    muteIcon.textContent = audio.muted ? '🔇' : '🔊';
+    if (navigator.vibrate) navigator.vibrate(8);
+  });
+
+  // Tocar el cassette / el main (id="V"), evitando links y botones internos
+  main.addEventListener('click', (e) => {
+    if (e.target.closest('a')) return;
+    if (e.target.closest('#playHint')) return;
+    if (e.target.closest('#muteBtn')) return;
+    if (e.target.closest('#countdown')) return;
+    toggleAudio();
+  });
+
+  // Accesibilidad: activar con teclado (Enter / Espacio) sobre el main
+  main.addEventListener('keydown', (e) => {
+    if ((e.key === 'Enter' || e.key === ' ') && !e.target.closest('a') && !e.target.closest('#playHint') && !e.target.closest('#muteBtn')){
+      e.preventDefault();
+      toggleAudio();
+    }
+  });
+
+  // ================= Contador regresivo hasta el 24 de agosto =================
+  const PARTY_DATE = new Date('2026-08-24T21:00:00-03:00');
+  const cdDays = document.getElementById('cd-days');
+  const cdHours = document.getElementById('cd-hours');
+  const cdMin = document.getElementById('cd-min');
+  const cdSec = document.getElementById('cd-sec');
+  const countdownLabel = document.getElementById('countdownLabel');
+  const countdownGrid = document.getElementById('countdownGrid');
+
+  function pad(n){ return String(n).padStart(2, '0'); }
+
+  function updateCountdown(){
+    const diff = PARTY_DATE.getTime() - Date.now();
+    if (diff <= 0){
+      countdownLabel.textContent = '¡Es hoy! Nos vemos a las 21:00 hs 🎉';
+      countdownGrid.style.display = 'none';
+      clearInterval(countdownTimer);
+      return;
+    }
+    const totalSeconds = Math.floor(diff / 1000);
+    const days = Math.floor(totalSeconds / 86400);
+    const hours = Math.floor((totalSeconds % 86400) / 3600);
+    const minutes = Math.floor((totalSeconds % 3600) / 60);
+    const seconds = totalSeconds % 60;
+    cdDays.textContent = pad(days);
+    cdHours.textContent = pad(hours);
+    cdMin.textContent = pad(minutes);
+    cdSec.textContent = pad(seconds);
+  }
+
+  updateCountdown();
+  const countdownTimer = setInterval(updateCountdown, 1000);
+</script>
+
+</body>
+</html>
