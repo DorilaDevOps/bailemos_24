@@ -1,6 +1,6 @@
-# Nostalgia — Invitación Fiesta de Baile Retro 🎶📼
+# MEMORIAS — Invitación Fiesta de Baile Retro 🎶📼
 
-Invitación web tipo cassette para la fiesta **NOSTALGIA**, el **lunes 24 de agosto** desde las **21:00 hs** en **Coraceros 3690, Capurro, Montevideo**.
+Invitación web tipo cassette para la fiesta **MEMORIAS**, el **lunes 24 de agosto** desde las **21:00 hs** en **Coraceros 3690, Capurro, Montevideo**.
 
 Sitio estático hecho 100% en **HTML + CSS + JS moderno** (sin frameworks, sin build), mobile-first, con reproducción de audio, SEO básico y vista previa optimizada para compartir por WhatsApp.
 
@@ -9,7 +9,7 @@ Sitio estático hecho 100% en **HTML + CSS + JS moderno** (sin frameworks, sin b
 ## 📁 Estructura de archivos
 
 ```
-nostalgia-invitacion/
+memorias-invitacion/
 ├── index.html            # Página principal (todo el CSS y JS está inline acá)
 ├── cassete.svg            # Ícono del cassette — favicon principal (SVG)
 ├── devo.mp3                # Audio que suena al tocar la tarjeta ("himno" de la fiesta)
@@ -30,14 +30,14 @@ No necesita instalación ni dependencias. Alcanza con levantar un servidor está
 
 **Opción A — Python (ya viene instalado en Mac/Linux):**
 ```bash
-cd nostalgia-invitacion
+cd memorias-invitacion
 python3 -m http.server 8000
 ```
 Abrir en el navegador: `http://localhost:8000`
 
 **Opción B — Node:**
 ```bash
-cd nostalgia-invitacion
+cd memorias-invitacion
 npx serve .
 ```
 
@@ -54,14 +54,14 @@ Es un sitio 100% estático: sirve **cualquier hosting estático gratuito**. Las 
 
 ### Netlify (recomendado, arrastrar y soltar)
 1. Entrar a [app.netlify.com/drop](https://app.netlify.com/drop)
-2. Arrastrar la carpeta `nostalgia-invitacion` completa
+2. Arrastrar la carpeta `memorias-invitacion` completa
 3. Netlify te da una URL tipo `https://nombre-random.netlify.app`
 4. (Opcional) Cambiar el nombre del sitio o conectar un dominio propio en *Site settings → Domain management*
 
 ### Vercel
 ```bash
 npm i -g vercel
-cd nostalgia-invitacion
+cd memorias-invitacion
 vercel --prod
 ```
 
