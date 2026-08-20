@@ -464,6 +464,22 @@
     box-shadow: 0 0 10px rgba(var(--pink-rgb),0.25);
   }
 
+  .nav-btn{
+    appearance:none; -webkit-appearance:none;
+    background: rgba(var(--white-rgb),0.06);
+    border: 1px solid rgba(var(--white-rgb),0.14);
+    border-radius: 50%;
+    width:40px; height:40px; flex-shrink:0;
+    display:inline-flex; align-items:center; justify-content:center;
+    font-size: 1.05em;
+    line-height:1;
+    cursor:pointer;
+    opacity:0; animation: fade-up .6s ease forwards .68s;
+    transition: transform .15s ease, opacity .15s ease, background .15s ease, border-color .15s ease;
+  }
+  .nav-btn:hover{ background: rgba(var(--white-rgb),0.1); }
+  .nav-btn:active{ transform: scale(0.88); }
+
   @media (prefers-reduced-motion: reduce){
     *{ animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
   }
@@ -549,16 +565,18 @@
   </div>
 
   <div class="controls">
+    <button type="button" class="nav-btn" id="prevBtn" aria-label="Canción anterior">⏮</button>
     <button type="button" class="hint" id="playHint" aria-pressed="false">
       <span class="eq" aria-hidden="true"><span></span><span></span><span></span></span>
       <span id="playHintLabel">Tocá para escuchar el himno de la fiesta ▸</span>
     </button>
+    <button type="button" class="nav-btn" id="nextBtn" aria-label="Siguiente canción">⏭</button>
     <button type="button" class="mute-btn" id="muteBtn" aria-pressed="false" aria-label="Silenciar audio">
       <span id="muteIcon" aria-hidden="true">🔊</span>
     </button>
   </div>
 
-  <audio id="himno" src="devo.mp3" preload="none" loop playsinline></audio>
+  <audio id="himno" preload="none" playsinline></audio>
 </main>
 
 <script>
@@ -568,43 +586,84 @@
   const playHintLabel = document.getElementById('playHintLabel');
   const muteBtn = document.getElementById('muteBtn');
   const muteIcon = document.getElementById('muteIcon');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
   const audio = document.getElementById('himno');
 
-  const LABEL_PLAY = 'Tocá para escuchar el himno de la fiesta ▸';
-  const LABEL_PAUSE = 'Sonando ahora — tocá para pausar ⏸';
+  const playlist = [
+    { file: 'musica/devo.mp3', name: 'Devo' },
+    { file: 'musica/Los-Tipitos-Campanas.mp3', name: 'Los Tipitos — Campanas' },
+    { file: 'musica/MIRANDA - Don (Don Pich! 12'' Mix).mp3', name: 'Miranda — Don Pich!' },
+    { file: 'musica/Soda Stereo - Gustavo Cerati & Cafe Tacuba - Juegos de SeducciU_n (Vivo).mp3', name: 'Soda Stereo & Café Tacvba — Juegos de Seducción' }
+  ];
+  let currentTrack = 0;
+
+  function loadTrack(index){
+    currentTrack = index;
+    audio.src = playlist[index].file;
+    audio.load();
+  }
+
+  function getTrackLabel(){
+    return playlist[currentTrack].name;
+  }
+
+  const LABEL_PLAY = 'Tocá para escuchar ▸';
+  const LABEL_PAUSE = 'Sonando — tocá para pausar ⏸';
 
   function setPlayingUI(isPlaying){
     cassette.classList.toggle('playing', isPlaying);
     main.classList.toggle('playing', isPlaying);
     playHint.setAttribute('aria-pressed', String(isPlaying));
     main.setAttribute('aria-pressed', String(isPlaying));
-    playHintLabel.textContent = isPlaying ? LABEL_PAUSE : LABEL_PLAY;
+    playHintLabel.textContent = isPlaying
+      ? `${LABEL_PAUSE}  🎵 ${getTrackLabel()}`
+      : `${LABEL_PLAY}  🎵 ${getTrackLabel()}`;
   }
 
   async function toggleAudio(){
     try{
       if (audio.paused){
+        if (!audio.src) loadTrack(currentTrack);
         await audio.play();
       } else {
         audio.pause();
       }
-    }catch(err){
-      // Reproducción bloqueada por el navegador hasta un gesto directo del usuario; se ignora.
-    }
+    }catch(err){}
     if (navigator.vibrate) navigator.vibrate(12);
+  }
+
+  function nextTrack(){
+    const next = (currentTrack + 1) % playlist.length;
+    loadTrack(next);
+    audio.play().catch(()=>{});
+  }
+
+  function prevTrack(){
+    const prev = (currentTrack - 1 + playlist.length) % playlist.length;
+    loadTrack(prev);
+    audio.play().catch(()=>{});
   }
 
   audio.addEventListener('play', () => setPlayingUI(true));
   audio.addEventListener('pause', () => setPlayingUI(false));
-  audio.addEventListener('ended', () => setPlayingUI(false));
+  audio.addEventListener('ended', nextTrack);
 
-  // Tocar el botón "playHint"
   playHint.addEventListener('click', (e) => {
     e.stopPropagation();
     toggleAudio();
   });
 
-  // Botón de silenciar / activar audio (no afecta play/pause)
+  prevBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    prevTrack();
+  });
+
+  nextBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    nextTrack();
+  });
+
   muteBtn.addEventListener('click', (e) => {
     e.stopPropagation();
     audio.muted = !audio.muted;
@@ -614,22 +673,24 @@
     if (navigator.vibrate) navigator.vibrate(8);
   });
 
-  // Tocar el cassette / el main (id="V"), evitando links y botones internos
   main.addEventListener('click', (e) => {
     if (e.target.closest('a')) return;
     if (e.target.closest('#playHint')) return;
     if (e.target.closest('#muteBtn')) return;
+    if (e.target.closest('#prevBtn')) return;
+    if (e.target.closest('#nextBtn')) return;
     if (e.target.closest('#countdown')) return;
     toggleAudio();
   });
 
-  // Accesibilidad: activar con teclado (Enter / Espacio) sobre el main
   main.addEventListener('keydown', (e) => {
-    if ((e.key === 'Enter' || e.key === ' ') && !e.target.closest('a') && !e.target.closest('#playHint') && !e.target.closest('#muteBtn')){
+    if ((e.key === 'Enter' || e.key === ' ') && !e.target.closest('a') && !e.target.closest('#playHint') && !e.target.closest('#muteBtn') && !e.target.closest('#prevBtn') && !e.target.closest('#nextBtn')){
       e.preventDefault();
       toggleAudio();
     }
   });
+
+  loadTrack(0);
 
   // ================= Contador regresivo hasta el 24 de agosto =================
   const PARTY_DATE = new Date('2026-08-24T21:00:00-03:00');
